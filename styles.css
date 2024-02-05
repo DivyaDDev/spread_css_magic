@@ -1,0 +1,202 @@
+@font-face { font-family: Devant Horgen; src: url('./Devant_Horgen_V3.0/OTF/Devant\ Horgen.otf'); } 
+.container {
+    height: 55vh;
+    width: 99vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container_75 {
+    height: 95vh;
+}
+
+.container_25 {
+    height: 25vh;
+}
+
+.title_01 {
+    position: relative;
+    right: 0px;
+    font-family: Devant Horgen, sans-serif;
+    font-size: 54px;
+    padding-right: 20px;
+}
+.title_02 {
+    position: relative;
+    right: 0px;
+    font-family: Devant Horgen, sans-serif;
+    font-size: 54px;
+    padding-left: 20px;
+    color: black;
+}
+.title_03 {
+    position: relative;
+    right: 0px;
+    font-family: Devant Horgen, sans-serif;
+    font-size: 54px;
+    padding-right: 20px;
+    color: white;
+}
+
+
+.white {
+    background-color: rgb(248, 244, 244);
+}
+
+.steel {
+    background-color: #474a4b;
+}
+
+.black {
+    background-color: black;
+}
+
+.clouds {
+    background-clip: text;
+    color: transparent;
+    font-size: 92px;
+    font-family: Devant Horgen, sans-serif;
+    padding-left: 20vw;
+    &:not(:hover)::before {
+        content: attr(data-heading);
+        left: 158px;
+        font-family: Devant Horgen, sans-serif;
+        background-clip: text;
+        color: #3a3c3c;
+        background-size: 200%;
+    }
+    &:hover::before {
+        content: attr(data-heading);
+        left: 158px;
+        background: linear-gradient(40deg, rgba(255,255,255,0) 15%,rgba(255,255,255,0.8) 5%,rgba(255,255,255,0) 55%,rgba(255,255,255,0) 100%);
+        background-clip: text;
+        animation: clouds-animation 3s infinite;
+        background-size: 200%;
+    }
+}
+
+@keyframes clouds-animation {
+	0% {background-position: -100%;}
+	100% {background-position: 100%;}
+}
+
+.image-wrapper {
+	height: 12rem;
+	width: 12rem;
+	border-radius: 6px;
+	background-color: #ccc;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	line-height: 1.6;
+
+	img {
+		height: auto;
+		max-width: 100%;
+	}
+}
+
+
+.image_shine {
+    mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.2) 50%,#000 75%);
+    mask-size: 800%;
+    mask-position: 0;
+    border-radius: 8px;
+    margin-right: 40px;
+}
+  
+.image_shine:hover {
+    transition: mask-position 2s ease;
+    mask-position: 120%;
+    opacity: 1;
+}
+
+.mirror {
+    transform: scaleX(-1);
+}
+
+.size_350 {
+    width: 350px;
+    height: 350px;
+}
+
+.size_550 {
+    width: 350px;
+    height: 550px;
+}
+
+.size_width_550 {
+    width: 350px;
+    height: 550px;
+    opacity: 0.5;
+    border: 0.1px solid pink;
+    border-radius: 10px;
+    margin-left: 50px;
+}
+.size_width_550:hover {
+    opacity: 1;
+    box-shadow: 5px 5px 15px 15px white;
+}
+
+.footer {
+    background-color: rgb(234, 55, 55);
+    font-family: Devant Horgen, sans-serif;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 24px;
+}
+
+.animated-border-box, .animated-border-box-glow{
+    height: 150px;
+    width: 500px;
+    position: absolute;
+    overflow: hidden; 
+    z-index: 0;
+    border-radius: 10px;
+    align-items: center;
+    display: flex;
+    font-family: Devant Horgen, sans-serif;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    right: 0;
+    gap: 8px;
+    margin-right: 20px;
+  }
+
+  .animated-border-box:before, .animated-border-box-glow:before {
+    content: '';
+    z-index: -2;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    position: absolute;
+    width: 99999px;
+    height: 99999px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-image: conic-gradient(rgba(0,0,0,0), #f1f2f4, rgba(0,0,0,0) 25%);
+    animation: rotate 4s linear infinite;
+  }
+  
+  .animated-border-box:after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: 5px;
+      top: 5px;
+      width: calc(100% - 10px);
+      height: calc(100% - 10px);
+      background: #0e0e11;
+      border-radius: 7px;
+  }
+  
+  @keyframes rotate {
+      100% {
+          transform: translate(-50%, -50%) rotate(1turn);
+      }
+  }
+  
