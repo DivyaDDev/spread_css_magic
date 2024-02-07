@@ -23,6 +23,7 @@
     font-size: 54px;
     padding-right: 20px;
 }
+
 .title_02 {
     position: relative;
     right: 0px;
@@ -31,12 +32,22 @@
     padding-left: 20px;
     color: black;
 }
+
 .title_03 {
     position: relative;
     right: 0px;
     font-family: Devant Horgen, sans-serif;
     font-size: 54px;
     padding-right: 20px;
+    color: white;
+}
+
+.title_04 {
+    position: relative;
+    right: 0px;
+    font-family: Devant Horgen, sans-serif;
+    font-size: 54px;
+    padding-left: 20px;
     color: white;
 }
 
@@ -140,63 +151,51 @@
     box-shadow: 5px 5px 15px 15px white;
 }
 
-.footer {
-    background-color: rgb(234, 55, 55);
-    font-family: Devant Horgen, sans-serif;
-    flex-direction: column;
-    justify-content: space-evenly;
-    font-size: 24px;
+.gradient-glow {
+    background-image: linear-gradient(80deg, hwb(0 50% 48%), rgb(229, 242, 114) 42%, white 85%);
+    -webkit-background-clip: text; /* For Safari/Chrome */
+    background-clip: text; /* For Safari/Chrome */
+    color: transparent;
+    font-family: 'Devant Horgen', sans-serif;
+    font-size: 225px;
+    margin-right: 20px;
+    animation: gradAnimation 5s ease-in-out infinite;
+    background-size: 200% 200%;
+    position: absolute;
 }
 
-.animated-border-box, .animated-border-box-glow{
-    height: 150px;
-    width: 500px;
-    position: absolute;
-    overflow: hidden; 
-    z-index: 0;
-    border-radius: 10px;
-    align-items: center;
-    display: flex;
-    font-family: Devant Horgen, sans-serif;
-    flex-direction: column;
-    justify-content: center;
-    color: white;
-    right: 0;
-    gap: 8px;
+.row {
+    display: block;
+}
+.gradient-glow-blur {
+    opacity: .4;
+    filter: blur(50px);
+    transition: opacity .3s;
+    background-image: linear-gradient(80deg,  rgb(248, 246, 244) 42%, rgb(231, 195, 15), rgb(236, 238, 233) 85%);
+    -webkit-background-clip: text; /* For Safari/Chrome */
+    background-clip: text; /* For Safari/Chrome */
+    color: transparent;
+    font-family: 'Devant Horgen', sans-serif;
+    font-size: 225px;
     margin-right: 20px;
-  }
+    animation: gradAnimation 5s ease-in-out infinite;
+    background-size: 200% 200%;
+}
 
-  .animated-border-box:before, .animated-border-box-glow:before {
-    content: '';
-    z-index: -2;
-    text-align: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(0deg);
-    position: absolute;
-    width: 99999px;
-    height: 99999px;
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-image: conic-gradient(rgba(0,0,0,0), #f1f2f4, rgba(0,0,0,0) 25%);
-    animation: rotate 4s linear infinite;
-  }
-  
-  .animated-border-box:after {
-      content: '';
-      position: absolute;
-      z-index: -1;
-      left: 5px;
-      top: 5px;
-      width: calc(100% - 10px);
-      height: calc(100% - 10px);
-      background: #0e0e11;
-      border-radius: 7px;
-  }
-  
-  @keyframes rotate {
-      100% {
-          transform: translate(-50%, -50%) rotate(1turn);
-      }
-  }
-  
+.mask-image {
+    background-image: url("./assets/mask.png");
+    margin-right: 50px;
+}
+
+.mask-image img{
+    backdrop-filter: blur(15px) saturate(3);
+}
+
+@keyframes gradAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
